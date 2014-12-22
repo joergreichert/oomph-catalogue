@@ -7,7 +7,7 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore"
     name="org.eclipse"
-    label="Alex-Projects">
+    label="Joerg-Projects">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="Global Variables">
@@ -295,18 +295,21 @@
     </targlet>
   </setupTask>
   <project name="GitHubContainer" label="Joerg's Github projects">
-    <project href="https://raw.githubusercontent.com/joergreichert/ActiveAnnotationsExamples/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/release/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/mobilecloud-14-xtend/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/Permet/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/Cool/master/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/Spray/master/oomph.setup#/"/>
+    <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
+    <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/release/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="setups/xtextRuntime273.setup#/"/>
   </project>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/Oomph.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/com.github.projects.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Equinox.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Platform.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/EGit.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/PDE.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/JDT.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/EMF.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Xtext.setup#/"/>
+  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/mylyn.tasks.setup#/"/>
   <description></description>
 </setup:ProjectCatalog>
