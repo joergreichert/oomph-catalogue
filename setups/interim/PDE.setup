@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
+    xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
+    xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    name="pde"
+    label="PDE">
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.pde.api.tools.ee.feature.feature.group"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="org.eclipse.pde.api.tools">
+    <setupTask
+        xsi:type="setup:PreferenceTask"
+        key="/instance/org.eclipse.pde.api.tools/missing_default_api_profile"
+        value="Ignore"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="refresh.enabled">
+    <setupTask
+        xsi:type="setup:PreferenceTask"
+        key="/instance/org.eclipse.core.resources/refresh.enabled"
+        value="true"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Xmx"
+      value="2048m"
+      vm="true"/>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      excludedTriggers="STARTUP MANUAL"
+      content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
+      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
+      encoding="UTF-8"
+      documentation="Initialize the Package Explorer to display workings sets."/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="eclipse.target.platform"
+      defaultValue="Luna"
+      storageURI="scope://Workspace"/>
+  <setupTask
+      xsi:type="jdt:JRETask"
+      version="JavaSE-1.7"
+      location="${jre.location-1.7}"/>
+  <setupTask
+      xsi:type="setup.targlets:TargletTask">
+    <targlet
+        name="PDE Platform"
+        activeRepositoryList="${eclipse.target.platform}">
+      <requirement
+          name="org.eclipse.platform.feature.group"/>
+      <requirement
+          name="org.eclipse.jdt.feature.group"/>
+      <requirement
+          name="org.eclipse.pde.feature.group"/>
+      <requirement
+          name="org.eclipse.equinox.executable.feature.group"/>
+      <repositoryList
+          name="Mars">
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license"/>
+      </repositoryList>
+      <repositoryList
+          name="Luna">
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license"/>
+      </repositoryList>
+      <repositoryList
+          name="Kepler">
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license"/>
+      </repositoryList>
+      <repositoryList
+          name="Juno">
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license"/>
+      </repositoryList>
+    </targlet>
+  </setupTask>
+  <project name="feature"
+      label="Feature">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.pde"
+        remoteURI="pde/eclipse.pde"
+        userID="">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>eclipse.git.gerrit.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>PDE Feature Git or Gerrit Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>PDE Core</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask">
+      <targlet
+          name="PDE Feature"
+          activeRepositoryList="${eclipse.target.platform}"
+          includeAllPlatforms="true">
+        <sourceLocator
+            rootFolder="${git.clone.pde.location}"/>
+      </targlet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="PDE Feature">
+        <predicate
+            xsi:type="predicates:RepositoryPredicate"
+            project="org.eclipse.pde-feature"/>
+      </workingSet>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="eclipse.target.platform"
+          value="Mars"
+          storageURI="scope://Workspace"/>
+    </stream>
+    <description>The PDE Feature</description>
+  </project>
+  <project name="ui"
+      label="UI">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.pde.ui"
+        remoteURI="pde/eclipse.pde.ui">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>eclipse.git.gerrit.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>PDE UI Git or Gerrit Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>PDE Core</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.pde.ui.location|uri}/ui/org.eclipse.pde.core/.settings/org.eclipse.jdt.core.prefs"
+        encoding="UTF-8">
+      <modification
+          pattern="org\.eclipse\.jdt\.core\.compiler\.problem\.forbiddenReference=(error)">
+        <substitution>warning</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.pde.ui.location|uri}/ui/org.eclipse.pde.core/.project"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;triggers>()full,incremental,&lt;/triggers>">
+        <substitution>auto,</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.pde.ui.location|uri}/ui/org.eclipse.pde.core/.externalToolBuilders/org.eclipse.pde.core localbuild.xml [Builder].launch"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS&quot; value=&quot;full,incremental,()&quot;/>">
+        <substitution>auto,</substitution>
+      </modification>
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_AFTER_CLEAN_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>([\n\r]+)&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_MANUAL_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>">
+        <substitution>\1&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_AUTO_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>\1</substitution>
+      </modification>
+      <modification
+          pattern="&lt;booleanAttribute key=&quot;org.eclipse.ant.ui.DEFAULT_VM_INSTALL&quot; value=&quot;false&quot;/>([\n\r]+)&lt;booleanAttribute key=&quot;org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND&quot; value=&quot;false&quot;/>">
+        <substitution>\1&lt;stringAttribute key=&quot;org.eclipse.debug.core.ATTR_REFRESH_SCOPE&quot; value=&quot;$${working_set:&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;resources&amp;gt;&amp;#13;&amp;#10;&amp;lt;item path=&amp;quot;/org.eclipse.pde.core/ant_tasks&amp;quot; type=&amp;quot;2&amp;quot;/&amp;gt;&amp;#13;&amp;#10;&amp;lt;/resources&amp;gt;}&quot;/>\1</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask">
+      <targlet
+          name="PDE UI"
+          activeRepositoryList="${eclipse.target.platform}"
+          includeAllPlatforms="true">
+        <sourceLocator
+            rootFolder="${git.clone.pde.ui.location}"/>
+      </targlet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="PDE UI">
+        <predicate
+            xsi:type="predicates:RepositoryPredicate"
+            project="org.eclipse.pde"/>
+      </workingSet>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="eclipse.target.platform"
+          value="Mars"
+          storageURI="scope://Workspace"/>
+    </stream>
+    <description>The PDE UI</description>
+  </project>
+  <project name="build"
+      label="Build">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.equinox.p2"
+        remoteURI="equinox/rt.equinox.p2">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>eclipse.git.gerrit.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>Equinox P2 Git or Gerrit Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>Equinox P2</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.equinox.p2.location|uri}/bundles/org.eclipse.equinox.p2.jarprocessor/.project"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;triggers>()full,incremental,&lt;/triggers>">
+        <substitution>auto,</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.equinox.p2.location|uri}/bundles/org.eclipse.equinox.p2.jarprocessor/.externalToolBuilders/AntTaskBuilder.launch"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS&quot; value=&quot;full,incremental,()&quot;/>">
+        <substitution>auto,</substitution>
+      </modification>
+      <modification
+          pattern="&lt;booleanAttribute key=&quot;org.eclipse.ant.ui.DEFAULT_VM_INSTALL&quot; value=&quot;false&quot;/>([\n\r]+)&lt;listAttribute key=&quot;org.eclipse.debug.core.MAPPED_RESOURCE_PATHS&quot;>">
+        <substitution>\1&lt;stringAttribute key=&quot;org.eclipse.debug.core.ATTR_REFRESH_SCOPE&quot; value=&quot;$${working_set:&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;resources&amp;gt;&amp;#13;&amp;#10;&amp;lt;item path=&amp;quot;/org.eclipse.equinox.p2.jarprocessor/lib&amp;quot; type=&amp;quot;2&amp;quot;/&amp;gt;&amp;#13;&amp;#10;&amp;lt;/resources&amp;gt;}&quot;/>\1</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.equinox.p2.location|uri}/bundles/org.eclipse.equinox.p2.repository.tools/.project"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;triggers>()full,incremental,&lt;/triggers>">
+        <substitution>auto,</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.equinox.p2.location|uri}/bundles/org.eclipse.equinox.p2.repository.tools/scripts/buildAntJARs.xml"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS&quot; value=&quot;full,incremental,()&quot;/>">
+        <substitution>auto,</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.pde.build"
+        remoteURI="pde/eclipse.pde.build">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>eclipse.git.gerrit.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>PDE Build Git or Gerrit Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>PDE Core</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.pde.build.location|uri}/org.eclipse.pde.build/.project"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;triggers>()full,incremental,&lt;/triggers>">
+        <substitution>auto,</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        excludedTriggers="BOOTSTRAP"
+        url="${git.clone.pde.build.location|uri}/org.eclipse.pde.build/.externalToolBuilders/org.eclipse.pde.build localbuild.xml [Builder].launch"
+        encoding="UTF-8">
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS&quot; value=&quot;full,incremental,()&quot;/>">
+        <substitution>auto,</substitution>
+      </modification>
+      <modification
+          pattern="&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_AFTER_CLEAN_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>([\n\r]+)&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_MANUAL_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>">
+        <substitution>\1&lt;stringAttribute key=&quot;org.eclipse.ant.ui.ATTR_ANT_AUTO_TARGETS&quot; value=&quot;workspaceBinaries,&quot;/>\1</substitution>
+      </modification>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask">
+      <targlet
+          name="PDE Build"
+          activeRepositoryList="${eclipse.target.platform}"
+          includeAllPlatforms="true">
+        <sourceLocator
+            rootFolder="${git.clone.pde.build.location}"/>
+        <sourceLocator
+            rootFolder="${git.clone.equinox.p2.location/bundles/org.eclipse.equinox.p2.repository.tools}"/>
+        <sourceLocator
+            rootFolder="${git.clone.equinox.p2.location/bundles/org.eclipse.equinox.p2.jarprocessor}"/>
+      </targlet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="PDE Build">
+        <predicate
+            xsi:type="predicates:RepositoryPredicate"
+            project="org.eclipse.pde.build"/>
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.eclipse\.equinox\.p2\.repository\.tools|org\.eclipse\.equinox\.p2\.jarprocessor"/>
+      </workingSet>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="eclipse.target.platform"
+          value="Mars"
+          storageURI="scope://Workspace"/>
+    </stream>
+    <description>The PDE Build</description>
+  </project>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>The setups for the Plug-in Development Environment projects</description>
+</setup:Project>

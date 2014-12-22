@@ -29,6 +29,7 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 	     * C:\Users\.p2
 		   * pool
  * page 2
+   * Press refresh button in the upper right corner
    * Joerg-Projects
      * Joerg's Github projects
 	   * ActiveAnnotationsExamples: BeanFX (TODO)
@@ -78,11 +79,11 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 ```	   
         C:\Users\Reichert\.p2\pool
 ```
-	   * profiles.info
+     * profiles.info
 ```
         <empty>
 ```
-	   * C:\_oomph_agent
+   * C:\_oomph_agent
      * pools.info
 ```
 	    C:\_oomph_bundle_pool
@@ -91,18 +92,18 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 ```
   	    C__eclipse_EclipseLuna_eclipse|Installation|C:\\_oomph_bundle_pool|C:\\eclipse\\EclipseLuna\\eclipse|
 ```
-	 * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2
-       * agents.info
+   * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2
+     * agents.info
 ```
   	      C:\Users\Reichert\.p2
           C:\_oomph_agent
 ```
- 	   * defaults.info
+     * defaults.info
 ```
           org.eclipse.oomph.setup.ui=C\:\\_oomph_bundle_pool
 ```
-	 * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2\setups
-       * catalogs.setup
+   * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2\setups
+     * catalogs.setup
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <setup:CatalogSelection

@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/targlets/1.0 setups/models/SetupTarglets.ecore"
     name="org.eclipse"
     label="Joerg-Projects">
   <setupTask
@@ -299,17 +299,20 @@
     <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/release/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
-    <project href="setups/xtextRuntime273.setup#/"/>
+    <project href="xtextRuntime273.setup#/"/>
   </project>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/Oomph.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/com.github.projects.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Equinox.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Platform.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/EGit.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/PDE.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/JDT.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/EMF.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/Xtext.setup#/"/>
-  <project href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/interim/mylyn.tasks.setup#/"/>
+  <project name="GeneralContainer" label="General">
+    <project href="OomphAuthoring.setup#/"/>
+	<!-- copied from http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/ -->
+    <project href="com.github.projects.setup#/"/>
+    <project href="interim/Equinox.setup#/"/>
+    <project href="interim/Platform.setup#/"/>
+    <project href="interim/EGit.setup#/"/>
+    <project href="interim/PDE.setup#/"/>
+    <project href="interim/JDT.setup#/"/>
+    <project href="interim/EMF.setup#/"/>
+    <project href="interim/Xtext.setup#/"/>
+    <project href="interim/mylyn.tasks.setup#/"/>
+  </project>
   <description></description>
 </setup:ProjectCatalog>
