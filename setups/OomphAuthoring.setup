@@ -60,28 +60,34 @@
   <stream name="master"
       label="master">
     <setupTask
-        xsi:type="setup:StringSubstitutionTask"
-        id="git.clone.local.oomph"
-        name="Local Oomph repository"
-        value="${git.clone.oomph.location}">
-      <description>Local Location for cloned Oomph repository</description>
-    </setupTask>
-    <setupTask
-        xsi:type="git:GitCloneTask"
-        id="git.clone.oomph.uri"
-        location="${git.clone.oomph}"
-        remoteURI="git://git.eclipse.org/gitroot/oomph/org.eclipse.oomph.git">
-      <description>Oomph Git Clone</description>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="oomph.setups.references">
-      <sourceLocator
-          rootFolder="${git.clone.oomph}/org.eclipse.oomph/setups">
-        <annotation
-            source="This_project_can't_be_materlized_because_it_has_no_component_extension"/>
-      </sourceLocator>
-      <description>Setups as reference</description>
+        xsi:type="setup:CompoundTask"
+        id="import.oomph.setups"
+        name="Import Oomph setups">
+      <setupTask
+          xsi:type="setup:StringSubstitutionTask"
+          id="git.clone.local.oomph"
+          name="Local Oomph repository"
+          value="${git.clone.oomph.location}">
+        <description>Local Location for cloned Oomph repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.oomph.uri"
+          location="${git.clone.local.oomph}"
+          remoteURI="git://git.eclipse.org/gitroot/oomph/org.eclipse.oomph.git">
+        <description>Oomph Git Clone</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="oomph.setups.references">
+        <sourceLocator
+            rootFolder="${git.clone.local.oomph}/org.eclipse.oomph/setups">
+          <annotation
+              source="This_project_can't_be_materlized_because_it_has_no_component_extension"/>
+        </sourceLocator>
+        <description>Setups as reference</description>
+      </setupTask>
+      <description>Importing Oomph setups as reference</description>
     </setupTask>
   </stream>
   <description>IDE to author Oomph setup files</description>
