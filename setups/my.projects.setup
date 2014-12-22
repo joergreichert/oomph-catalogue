@@ -300,21 +300,7 @@
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="xtextRuntime273.setup#/"/>
-  </project>
-  <project name="GeneralContainer" label="General">
     <project href="OomphAuthoring.setup#/"/>
-	<!-- copied from http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/ -->
-	<!--
-    <project href="com.github.projects.setup#/"/>
-    <project href="interim/Equinox.setup#/"/>
-    <project href="interim/Platform.setup#/"/>
-    <project href="interim/EGit.setup#/"/>
-    <project href="interim/PDE.setup#/"/>
-    <project href="interim/JDT.setup#/"/>
-    <project href="interim/EMF.setup#/"/>
-    <project href="interim/Xtext.setup#/"/>
-    <project href="interim/mylyn.tasks.setup#/"/>
-	--
   </project>
   <description></description>
 </setup:ProjectCatalog>
