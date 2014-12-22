@@ -3,8 +3,11 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore"
     name="oomph.authoring"
     label="Oomph Authoring">
   <setupTask
@@ -50,17 +53,19 @@
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8"/>
   <setupTask
-      xsi:type="setup:StringSubstitutionTask"
-      id="git.clone.oomph"
-      name="git.clone.oomph"
-      value="${git.clone.oomph.location}"/>
-  <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
       defaultValue="Luna"
       storageURI="scope://Workspace"/>
   <stream name="master"
       label="master">
+    <setupTask
+        xsi:type="setup:StringSubstitutionTask"
+        id="git.clone.local.oomph"
+        name="Local Oomph repository"
+        value="${git.clone.oomph.location}">
+      <description>Local Location for cloned Oomph repository</description>
+    </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
         id="git.clone.oomph.uri"
@@ -72,7 +77,7 @@
         xsi:type="projects:ProjectsImportTask"
         id="oomph.setups.references">
       <sourceLocator
-          rootFolder="${git.clone.oomph.location/setups}">
+          rootFolder="${git.clone.oomph}/org.eclipse.oomph/setups">
         <annotation
             source="This_project_can't_be_materlized_because_it_has_no_component_extension"/>
       </sourceLocator>
