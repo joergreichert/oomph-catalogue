@@ -3,8 +3,11 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore"
     name="oomph.authoring"
     label="Oomph Authoring">
   <setupTask
@@ -41,7 +44,7 @@
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Xmx"
-      value="2048m"
+      value="1024m"
       vm="true"/>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
@@ -50,22 +53,8 @@
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8"/>
   <setupTask
-      xsi:type="jdt:JRETask"
-      version="JavaSE-1.8"
-      location="${jre.location-1.8}"/>
-  <setupTask
-      xsi:type="setup.targlets:TargletTask">
-    <targlet
-        name="Platform"
-        activeRepositoryList="${eclipse.target.platform}">
-      <requirement
-          name="org.eclipse.platform.feature.group"/>
-      <requirement
-          name="org.eclipse.equinox.executable.feature.group"/>
-    </targlet>
-  </setupTask>
-  <setupTask
       xsi:type="setup:StringSubstitutionTask"
+      id="git.clone.oomph"
       name="git.clone.oomph"
       value="${git.clone.oomph.location}"/>
   <setupTask
@@ -73,29 +62,22 @@
       name="eclipse.target.platform"
       defaultValue="Luna"
       storageURI="scope://Workspace"/>
-  <stream name="master">
-    <setupTask
-        xsi:type="git:GitCloneTask"
-        id="git.clone.oomph"
-        remoteURI="oomph/org.eclipse.oomph"
-        checkoutBranch="master">
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.oomph.uri"
+      location="${git.clone.oomph}"
+      remoteURI="git://git.eclipse.org/gitroot/oomph/org.eclipse.oomph.git">
+    <description>Oomph Git Clone</description>
+  </setupTask>
+  <setupTask
+      xsi:type="projects:ProjectsImportTask"
+      id="oomph.setups.references">
+    <sourceLocator
+        rootFolder="${git.clone.oomph.location/setups}">
       <annotation
-          source="http://www.eclipse.org/oomph/setup/InducedChoices">
-        <detail
-            key="inherit">
-          <value>eclipse.git.gerrit.remoteURIs</value>
-        </detail>
-        <detail
-            key="label">
-          <value>Oomph Git or Gerrit Repository</value>
-        </detail>
-        <detail
-            key="target">
-          <value>remoteURI</value>
-        </detail>
-      </annotation>
-      <description>Oomph</description>
-    </setupTask>
-  </stream>
+          source="This_project_can't_be_materlized_because_it_has_no_component_extension"/>
+    </sourceLocator>
+    <description>Setups as reference</description>
+  </setupTask>
   <description>IDE to author Oomph setup files</description>
 </setup:Project>

@@ -300,6 +300,8 @@
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="xtextRuntime273.setup#/"/>
+  </project>
+  <project name="GeneralContainer" label="General">
     <project href="OomphAuthoring.setup#/"/>
   </project>
   <description></description>
