@@ -64,13 +64,6 @@
         id="import.oomph.setups"
         name="Import Oomph setups">
       <setupTask
-          xsi:type="setup:StringSubstitutionTask"
-          id="git.clone.local.oomph"
-          name="Local Oomph repository"
-          value="${git.clone.oomph.location}">
-        <description>Local Location for cloned Oomph repository</description>
-      </setupTask>
-      <setupTask
           xsi:type="git:GitCloneTask"
           id="git.clone.oomph.uri"
           location="${git.clone.local.oomph}"
