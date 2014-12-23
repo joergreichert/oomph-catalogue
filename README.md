@@ -73,37 +73,52 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
    * Xtext Runtime 2.7 Target Platform: Luna
  * page 4
    * Finish
- * Status
-   * C:\Users\Reichert\.p2
-     * pools.info
+   
+   
+## Example status
+### C:\Users\Reichert\.p2
+#### pools.info
+
 ```	   
         C:\Users\Reichert\.p2\pool
 ```
-     * profiles.info
+
+#### profiles.info
+
 ```
         <empty>
 ```
-   * C:\_oomph_agent
-     * pools.info
+
+### C:\_oomph_agent
+#### pools.info
+	 
 ```
 	    C:\_oomph_bundle_pool
 ```
-	 * profiles.info
+
+#### profiles.info
+	 
 ```
   	    C__eclipse_EclipseLuna_eclipse|Installation|C:\\_oomph_bundle_pool|C:\\eclipse\\EclipseLuna\\eclipse|
 ```
-   * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2
-     * agents.info
+
+### C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2
+#### agents.info
+	 
 ```
   	      C:\Users\Reichert\.p2
           C:\_oomph_agent
 ```
-     * defaults.info
+
+#### defaults.info
+	 
 ```
           org.eclipse.oomph.setup.ui=C\:\\_oomph_bundle_pool
 ```
-   * C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2\setups
-     * catalogs.setup
+
+### C:\Users\Reichert\.eclipse\org.eclipse.oomph.p2\setups
+#### catalogs.setup
+	 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <setup:CatalogSelection
@@ -123,7 +138,9 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
       selection="true"/>
 </setup:CatalogSelection>	 
 ```
-	 * locations.setup
+
+#### locations.setup
+	 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <setup:LocationCatalog
@@ -140,7 +157,9 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
   </workspace>
 </setup:LocationCatalog>
 ```
-	 * user.setup
+
+#### user.setup
+	 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <setup:User
@@ -445,8 +464,74 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 ```
  
 ## Example for creating a new Oomph setup
+### Initial steps
+ * use Oomph installer and choose General/Oomph Authoring at the second page to materialize product dedicated for editing setup files
+ * create new simple project to be used as container for the setup file to be created
  * File -> New -> Other... -> Oomph/Setup Project Model -> GitHub project
+   * Label: Repository Target Generator
+   * Name: repository.target.generator
+   * Description: Generator for .target and category.xml
+   * Git path: joergreichert/RepositoryTargetGenerator
+   * Package prefix: de.abg.jreichert.repositorytarget
+   * Installable unit id: de.abg.jreichert.repositorytarget.feature.feature.group
+   * Installable unit name: de.abg.jreichert.repositorytarget-feature
+   * JRE: ${jre.location-1.8}
+   * Folder: /de.abg.jreichert.repositorytarget.config.parent
+   * Filename: oomph.setup
  * to be continued
+ 
+### General hints
+ * create new tasks by context menu at project folder (in example: Repository target generator)
+ * use compound tasks to group tasks semantically together
+ * use context menu: Show properties view to show properties for current task / configuration node
+ * use existings setups as template for your own setups, e.g. their preferences configurations
+ * you can open an existing setup file, drag the editor to right to share the editor pane with your 
+   setup file in the other editor and then move things by drag and drop from the existing setup file
+   to your setup file and adapt the items to your needs
+
+### Start configuration
+ * task: Eclipse ini
+   * option: -Xmx
+   * value: 1024M
+   * vm: true
+ * task: Resource creation
+   * description: Initialize JDT's package explorer to show working sets as its root objects
+   * content:
+	<code>
+			<?xml version="1.0" encoding="UTF-8"?>
+			<section name="Workbench">
+				<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+					<item value="true" key="group_libraries"/>
+					<item value="false" key="linkWithEditor"/>
+					<item value="2" key="layout"/>
+					<item value="2" key="rootMode"/>
+					<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;packageExplorer configured=&quot;true&quot; group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;2&quot; sortWorkingSets=&quot;false&quot; workingSetName=&quot;&quot;&gt;&#x0D;&#x0A;&lt;localWorkingSetManager&gt;&#x0D;&#x0A;&lt;workingSet editPageId=&quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&quot; factoryID=&quot;org.eclipse.ui.internal.WorkingSetFactory&quot; id=&quot;1382792884467_1&quot; label=&quot;Other Projects&quot; name=&quot;Other Projects&quot;/&gt;&#x0D;&#x0A;&lt;/localWorkingSetManager&gt;&#x0D;&#x0A;&lt;activeWorkingSet workingSetName=&quot;Other Projects&quot;/&gt;&#x0D;&#x0A;&lt;allWorkingSets workingSetName=&quot;Other Projects&quot;/&gt;&#x0D;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+				</section>
+			</section>
+   </code>
+   * target URL: ${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml
+   * encoding: UTF-8
+
+### Compile configuration
+ * task: variable
+   * Type: String
+   * Name: eclipse.target.platform
+   * Value: None
+   * Storage URI: scope://
+ * task: JRE
+   * Version: JavaSE-1.8
+   * Location: ${jre.location-1.8}
+ 
+### IDE features and plug-ins selection
+ * task: P2 directory
+   * task: repository
+     * URL: http://download.eclipse.org/eclipse/updates/4.4
+	 * type: Combined
+	 * context menu: Explore
+	   * opens repository explorer, where the P2 repository is explored and all contained (in my case this process never stops)
+   * task: requirement
+ 
+### IDE preferences
 
 ## Resources 
  * [Original project proposal](https://projects.eclipse.org/proposals/oomph) 
