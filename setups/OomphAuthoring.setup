@@ -130,17 +130,15 @@
         url="file:///${git.clone.oomph.uri.location}/setups/.project"
         encoding="UTF-8">
       <modification
-          pattern="&lt;/natures>">
-        <substitution>
-	&lt;/natures>&#xD;
-	&lt;linkedResources>&#xD;
-		&lt;link>&#xD;
-			&lt;name>local_setups&lt;/name>&#xD;
-			&lt;type>2&lt;/type>&#xD;
-			&lt;locationURI>local_setups&lt;/locationURI>&#xD;
-		&lt;/link>&#xD;
-	&lt;/linkedResources>
-		</substitution>
+          pattern="\s*(&lt;/projectDescription>)\s*">
+        <substitution>		&lt;linkedResources>&#xD;&#xD;
+		&lt;link>&#xD;&#xD;
+			&lt;name>local_setups&lt;/name>&#xD;&#xD;
+			&lt;type>2&lt;/type>&#xD;&#xD;
+			&lt;locationURI>local_setups&lt;/locationURI>&#xD;&#xD;
+		&lt;/link>&#xD;&#xD;
+	&lt;/linkedResources>&#xD;
+&lt;/projectDescription>		</substitution>
       </modification>
     </setupTask>
     <description>Importing Oomph setups as reference</description>
