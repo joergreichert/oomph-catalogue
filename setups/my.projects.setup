@@ -296,7 +296,6 @@
   </setupTask>
   <project name="GitHubContainer" label="Joerg's Github projects">
     <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
-    <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/release/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="xtextRuntime273.setup#/"/>
