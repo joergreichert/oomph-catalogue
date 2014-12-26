@@ -130,7 +130,7 @@
         url="file:///${git.clone.oomph.uri.location}/setups/.project"
         encoding="UTF-8">
       <modification
-          pattern="\s*(&lt;/projectDescription>)\s*">
+          pattern="\s*</natures>\s*(</projectDescription>)\s*">
         <substitution>		&lt;linkedResources>&#xD;&#xD;
 		&lt;link>&#xD;&#xD;
 			&lt;name>local_setups&lt;/name>&#xD;&#xD;
