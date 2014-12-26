@@ -126,23 +126,10 @@
         path="${user.home}/.eclipse/org.eclipse.oomph.setup/setups"
         name="local_setups"/>
     <setupTask
-        xsi:type="setup:TextModifyTask"
-        url="file:///${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/.project"
-        encoding="UTF-8">
-      <modification
-          pattern="&lt;/natures>">
-        <substitution>
-	&lt;/natures>&#xD;
-	&lt;linkedResources>&#xD;
-		&lt;link>&#xD;
-			&lt;name>local_setups&lt;/name>&#xD;
-			&lt;type>2&lt;/type>&#xD;
-			&lt;locationURI>local_setups&lt;/locationURI>&#xD;
-		&lt;/link>&#xD;
-	&lt;/linkedResources>
-		</substitution>
-      </modification>
-    </setupTask>
+        xsi:type="setup:ResourceCreationTask"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>setups&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>&#xA;"
+        targetURL="file:///${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/.project"
+        encoding="UTF-8"/>
     <description>Importing Oomph setups as reference</description>
   </setupTask>
   <setupTask
