@@ -32,6 +32,14 @@
         xsi:type="setup:PreferenceTask"
         key="/instance/org.eclipse.core.resources/refresh.enabled"
         value="true"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="refresh.enabled">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/refresh.enabled"
+          value="true"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -53,35 +61,105 @@
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8"/>
   <setupTask
+      xsi:type="setup:CompoundTask"
+      id="import.oomph.setups"
+      name="Import Oomph setups">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.oomph.uri"
+        remoteURI="git://git.eclipse.org/gitroot/oomph/org.eclipse.oomph.git">
+      <description>Oomph Git Clone</description>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask"
+        id="oomph.setups.references">
+      <sourceLocator
+          rootFolder="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+      <description>Setups as reference</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/elexis/elexis-3-core/master/Elexis.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/IncQueryLabs/incquery-examples-cps/master/releng/org.eclipse.incquery.examples.cps.setup/EMFIncQueryDemo.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/eclipse/mylyn.docs.vex/master/org.eclipse.vex.releng/Vex.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/FTSRG/incqueryd/master/hu.bme.mit.incqueryd.tooling/hu.bme.mit.incqueryd.setup/IncQueryD.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/eclipse/mylyn.docs.vex/master/org.eclipse.vex.releng/Vex.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/lunifera/lunifera-oomph-setups/master/lunifera-xtext-runtimebuilder.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/JanKoehnlein/FXDiagram/master/de.fxdiagram.docs/FXDiagram.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/nittka/terminology/master/terminologyUse.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/nittka/terminology/master/terminologyDev.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/OomphAuthoring.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/juancadavid/papyrus/committers/jcadavid/testingFramework01072014/releng/user.setup"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
+    <setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="${user.dir}/.eclipse/org.eclipse.oomph.setup/setups"
+        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/user_setups"/>
+    <setupTask
+        xsi:type="setup:LinkLocationTask"
+        path="${user.home}/.eclipse/org.eclipse.oomph.setup/setups"
+        name="local_setups"/>
+    <setupTask
+        xsi:type="setup:TextModifyTask"
+        url="/setups/.project"
+        encoding="UTF-8">
+      <modification
+          pattern="&#x9;&lt;natures>">
+        <substitution>	&lt;natures>&#xD;
+	&lt;/natures>&#xD;
+	&lt;linkedResources>&#xD;
+		&lt;link>&#xD;
+			&lt;name>local_setups&lt;/name>&#xD;
+			&lt;type>2&lt;/type>&#xD;
+			&lt;locationURI>local_setups&lt;/locationURI>&#xD;
+		&lt;/link>&#xD;
+	&lt;/linkedResources></substitution>
+      </modification>
+    </setupTask>
+    <description>Importing Oomph setups as reference</description>
+  </setupTask>
+  <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
       defaultValue="Luna"
       storageURI="scope://Workspace"/>
-  <stream name="master"
-      label="master">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        id="import.oomph.setups"
-        name="Import Oomph setups">
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.oomph.uri"
-          location="${git.clone.local.oomph}"
-          remoteURI="git://git.eclipse.org/gitroot/oomph/org.eclipse.oomph.git">
-        <description>Oomph Git Clone</description>
-      </setupTask>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="oomph.setups.references">
-        <sourceLocator
-            rootFolder="${git.clone.local.oomph}/org.eclipse.oomph/setups">
-          <annotation
-              source="This_project_can't_be_materlized_because_it_has_no_component_extension"/>
-        </sourceLocator>
-        <description>Setups as reference</description>
-      </setupTask>
-      <description>Importing Oomph setups as reference</description>
-    </setupTask>
-  </stream>
-  <description>IDE to author Oomph setup files</description>
+  <stream name="master"/>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>minimal IDE to edit Oomph setup files</description>
 </setup:Project>
