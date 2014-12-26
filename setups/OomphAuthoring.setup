@@ -126,10 +126,6 @@
         sourceURL="https://raw.githubusercontent.com/juancadavid/papyrus/committers/jcadavid/testingFramework01072014/releng/user.setup"
         targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups"/>
     <setupTask
-        xsi:type="setup:ResourceCopyTask"
-        sourceURL="${user.dir}/.eclipse/org.eclipse.oomph.setup/setups"
-        targetURL="${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/user_setups"/>
-    <setupTask
         xsi:type="setup:LinkLocationTask"
         path="${user.home}/.eclipse/org.eclipse.oomph.setup/setups"
         name="local_setups"/>
