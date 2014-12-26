@@ -127,6 +127,7 @@
         name="local_setups"/>
     <setupTask
         xsi:type="setup:TextModifyTask"
+        predecessor="git.clone.oomph.uri"
         url="file:///${git.clone.oomph.uri.location}/setups/.project"
         encoding="UTF-8">
       <modification
