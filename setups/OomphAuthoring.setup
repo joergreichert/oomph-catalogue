@@ -127,7 +127,7 @@
         name="local_setups"/>
     <setupTask
         xsi:type="setup:TextModifyTask"
-        url="file:///${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/setups/.project"
+        url="file:///${git.clone.oomph.uri.location}/org.eclipse.oomph/setups/.project"
         encoding="UTF-8">
       <modification
           pattern="&lt;/natures>">
