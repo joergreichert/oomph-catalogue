@@ -137,6 +137,7 @@
 		content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>remote_setups&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&lt;/natures>&lt;linkedResources>&#xD;&#xD;&lt;link>&#xD;&#xD;&lt;name>local_setups&lt;/name>&#xD;&#xD;&lt;type>2&lt;/type>&#xD;&#xD;&lt;locationURI>local_setups&lt;/locationURI>&#xD;&#xD;&lt;/link>&#xD;&#xD;&lt;/linkedResources>&#xD;&#xA;&lt;/projectDescription>&#xA;"
 		targetURL="file:///${git.clone.oomph.uri.location}/org.eclipse.oomph/remote_setups/.project"
 		encoding="UTF-8"/>
+  </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
