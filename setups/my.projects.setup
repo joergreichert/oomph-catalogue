@@ -303,6 +303,7 @@
 	<project href="https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/releng/org.eclipse.xtext.example.knapsack.config.parent/oomph.setup#/"/>
 	<project href="https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/de.abg.jreichert.bookmarks.config.parent/oomph.setup#/"/>
 	<project href="https://raw.githubusercontent.com/joergreichert/Permet/master/releng/org.eclipse.xtext.example.fowlerdsl.config.parent/oomph.setup#/"/>
+	<project href="https://raw.githubusercontent.com/joergreichert/ActiveAnnotationsExamples/master/_common/de.abg.jreichert.activeanno.parent/oomph.setup#/"/>
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="xtextRuntime273.setup#/"/>
