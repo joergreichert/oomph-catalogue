@@ -113,12 +113,8 @@
         targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/EMFIncQueryDemo.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
-        sourceURL="https://raw.githubusercontent.com/eclipse/mylyn.docs.vex/master/org.eclipse.vex.releng/Vex.setup"
-        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/Vex.setup"/>
-    <setupTask
-        xsi:type="setup:ResourceCopyTask"
-        sourceURL="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup"
-        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/RepositoryTargetGenerator.setup"/>
+        sourceURL="https://raw.githubusercontent.com/JanKoehnlein/FXDiagram/master/de.fxdiagram.docs/FXDiagram.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/FXDiagram.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
         sourceURL="https://raw.githubusercontent.com/FTSRG/incqueryd/master/hu.bme.mit.incqueryd.tooling/hu.bme.mit.incqueryd.setup/IncQueryD.setup"
@@ -129,8 +125,8 @@
         targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/lunifera-xtext-runtimebuilder.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
-        sourceURL="https://raw.githubusercontent.com/JanKoehnlein/FXDiagram/master/de.fxdiagram.docs/FXDiagram.setup"
-        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/FXDiagram.setup"/>
+        sourceURL="https://raw.githubusercontent.com/juancadavid/papyrus/committers/jcadavid/testingFramework01072014/releng/user.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/papyrus_user.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
         sourceURL="https://raw.githubusercontent.com/nittka/terminology/master/terminologyUse.setup"
@@ -141,12 +137,36 @@
         targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/terminologyDev.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
-        sourceURL="https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/OomphAuthoring.setup"
-        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/OomphAuthoring.setup"/>
+        sourceURL="https://raw.githubusercontent.com/eclipse/mylyn.docs.vex/master/org.eclipse.vex.releng/Vex.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/Vex.setup"/>
     <setupTask
         xsi:type="setup:ResourceCopyTask"
-        sourceURL="https://raw.githubusercontent.com/juancadavid/papyrus/committers/jcadavid/testingFramework01072014/releng/user.setup"
-        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/papyrus_user.setup"/>
+        sourceURL="https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/OomphAuthoring.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/OomphAuthoring.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/ActiveAnnotationsExamples/master/_common/de.abg.jreichert.activeanno.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/ActiveAnnotationsExamples.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/de.abg.jreichert.bookmarks.config.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/BookmarksManager.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/releng/org.eclipse.xtext.example.knapsack.config.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/OperationsResearch.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/Permet/master/releng/org.eclipse.xtext.example.fowlerdsl.config.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/Permet.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/RepositoryTargetGenerator.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/XtextPlayground/master/TODO_Example_Xtext2/releng/org.eclipse.xtext.todo.config.parent/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/XtextPlayground.setup"/>
     <setupTask
         xsi:type="setup:LinkLocationTask"
         path="${user.home}/.eclipse/org.eclipse.oomph.setup/setups"
