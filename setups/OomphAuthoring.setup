@@ -178,6 +178,33 @@
       name="eclipse.target.platform"
       defaultValue="Luna"
       storageURI="scope://Workspace"/>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      id="" name="Tasks">
+    <setupTask
+      xsi:type="setup:VariableTask"
+      id=""
+      type="PASSWORD"
+      name="github.user.password"
+      label="GitHub password for issues"/>
+    <setupTask
+      xsi:type="mylyn:MylynQueriesTask"
+      connectorKind="github"
+      repositoryURL="https://github.com/joergreichert/oomph-catalogue"
+      userID="${github.user.id}"
+      password="${github.user.password}">
+      <query summary="${scope.project.label} open">
+        <attribute
+          key="state"
+          value="open::"/>
+      </query>
+      <query summary="${scope.project.label} resolved">
+        <attribute
+          key="state"
+          value="closed::"/>
+      </query>
+    </setupTask>
+  </setupTask> 
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
