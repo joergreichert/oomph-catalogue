@@ -149,6 +149,14 @@
         targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/ActiveAnnotationsExamples.setup"/>
 	<setupTask
         xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/mobilecloud-14-xtend/master/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/Android_Spring_Gradle.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
+        sourceURL="https://raw.githubusercontent.com/joergreichert/Cool/master/oomph.setup"
+        targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/Cool.setup"/>
+	<setupTask
+        xsi:type="setup:ResourceCopyTask"
         sourceURL="https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/de.abg.jreichert.bookmarks.config.parent/oomph.setup"
         targetURL="file:///${git.clone.oomph.uri.location}/../../oomph_remote_setups/BookmarksManager.setup"/>
 	<setupTask
