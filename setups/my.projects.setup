@@ -305,10 +305,12 @@
 	<project href="https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/releng/org.eclipse.xtext.example.knapsack.config.parent/oomph.setup#/"/>
 	<project href="https://raw.githubusercontent.com/joergreichert/Permet/master/releng/org.eclipse.xtext.example.fowlerdsl.config.parent/oomph.setup#/"/>
     <project href="https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup#/"/>
+    <project href="https://raw.githubusercontent.com/joergreichert/Spray/master/devtools/org.eclipselabs.spray.devenv/oomph.setup#/"/>
     <project href="https://raw.githubusercontent.com/joergreichert/XtextPlayground/master/TODO_Example_Xtext2/releng/org.eclipse.xtext.todo.config.parent/oomph.setup#/"/>
   </project>
   <project name="XtextContainer" label="Xtext Runtimes">
     <project href="xtextRuntime273.setup#/"/>
+    <project href="xtextRuntime280.setup#/"/>
   </project>
   <description></description>
 </setup:ProjectCatalog>

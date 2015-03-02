@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    name="Xtext Runtime 2.8.0"
+    label="Xtext Runtime 2.8.0">
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Xtext Runtime 2.8.0">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        id="Xtext runtime">
+      <requirement
+          name="org.eclipse.xtext.redist.feature.group"
+          versionRange="2.8.0"/>
+      <repository
+          url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/"/>
+      <repository
+          url="http://download.itemis.com/updates/releases/2.1.1"/>
+    </setupTask>
+  </setupTask>
+  <stream name="master"
+      label="master">
+    <description>master</description>
+  </stream>
+  <description></description>
+</setup:Project>
