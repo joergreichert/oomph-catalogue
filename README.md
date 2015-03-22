@@ -2,7 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [oomph-catalogue](#oomph-catalogue)
+- [oomph-catalogue
+](#oomph-catalogue)
   - [Setup](#setup)
   - [Example walkthrough](#example-walkthrough)
   - [Example for creating a new Oomph setup](#example-for-creating-a-new-oomph-setup)
@@ -201,7 +202,7 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
    * Targlets / Target platform
    * Mylyn Queries
    * Working sets
- * use wildcards to parameterize URLs and versions in P2 task and in Target task and then define variables in the stream sections to bind them stream dependent, so there is no need to duplicate the hole task block
+ * use wildcards to parameterize URLs and versions in P2 task and in Target task and then define variables in the stream sections to bind them stream dependent, so there is no need to duplicate the hole task block, see [here](https://bugs.eclipse.org/bugs/show_bug.cgi?id=460793#c6) how to use variables within version (as version is a regex, you have to use an EMF annotation as described there)
  * [To create an Oomph setup from an existing Eclipse installation](https://www.eclipse.org/forums/index.php/t/959921/)
  * use the Oomph simple mode when you don't want to setup your own Oomph file but reuse one of the existing predefine Eclipse installations - you still benefit from the shared bundle repository
 
