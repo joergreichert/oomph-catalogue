@@ -60,9 +60,13 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
  * start the Oomph installer
  
 ## Example walkthrough
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/01_StartSplashScreen.JPG "Start splash screen")
  * 1.0.0 Build 718
  * page 1
+ ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/02_SimpleMode.JPG "Simple mode")
    * Switch to advanced mode by clicking on the tools icon (first icon in the upper right corner) (this will close the current window an open a new window; you can always return to simple mode by clicking on the 4th icon in lower left corner) (if you don't see a tools icon in upper right corner, you are already in advanced mode)
+   * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/03a_AdvancedMode_all.JPG "Advanced mode (all)")
+   * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/03b_AdvancedMode.JPG "Advanced mode")
    * Click on the 5th icon in lower left corner to update the current Oomph installation (if the icon shows an hourclass in the upper right corner, wait, as Oomph is still checking if there are new updates available - if there are updates the icon will be coloured and animated, if there are no updates available the icon will be gray) 
    * Eclipse.org
      * Eclipse Standard/SDK
@@ -78,17 +82,18 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 	     * C:\Users\.p2
 		   * pool
  * page 2
+   * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/04_Page2.JPG "Page 2: Project selection")
    * Press refresh button in the upper right corner
    * Joerg-Projects
      * Joerg's Github projects
-           * [ActiveAnnotationsExamples](https://github.com/joergreichert/ActiveAnnotationsExamples) [oomph.setup](https://raw.githubusercontent.com/joergreichert/ActiveAnnotationsExamples/master/_common/de.abg.jreichert.activeanno.parent/oomph.setup)   
-           * [RepositoryTargetGenerator](https://github.com/joergreichert/RepositoryTargetGenerator) [oomph.setup](https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup)   
-           * [mobilecloud-14-xtend](https://github.com/joergreichert/mobile-14-xtend) [oomph.setup](https://raw.githubusercontent.com/joergreichert/mobilecloud-14-xtend/master/oomph.setup)   
-           * [OperaMisterWongBookmarks](https://github.com/joergreichert/OperaMisterWongBookmarks) [oomph.setup](https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/de.abg.jreichert.bookmarks.config.parent/oomph.setup)   
-           * [OperationsResearch](https://github.com/joergreichert/OperationsResearch) [oomph.setup](https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/releng/org.eclipse.xtext.example.knapsack.config.parent/oomph.setup)   
-           * [XtextPlayground](https://github.com/joergreichert/XtextPlayground) [oomph.setup](https://raw.githubusercontent.com/joergreichert/XtextPlayground/master/TODO_Example_Xtext2/releng/org.eclipse.xtext.todo.config.parent/oomph.setup)   
-           * [Permet](https://github.com/joergreichert/Permet) [oomph.setup](https://raw.githubusercontent.com/joergreichert/Permet/master/releng/org.eclipse.xtext.example.fowlerdsl.config.parent/oomph.setup)   
-           * [Cool](https://github.com/joergreichert/Cool) [oomph.setup](https://raw.githubusercontent.com/joergreichert/Cool/master/oomph.setup)   
+           * [ActiveAnnotationsExamples](https://github.com/joergreichert/ActiveAnnotationsExamples) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/ActiveAnnotationsExamples/master/_common/de.abg.jreichert.activeanno.parent/oomph.setup))
+           * [RepositoryTargetGenerator](https://github.com/joergreichert/RepositoryTargetGenerator) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/RepositoryTargetGenerator/master/releng/de.abg.jreichert.repositorytarget.config.parent/oomph.setup))
+           * [mobilecloud-14-xtend](https://github.com/joergreichert/mobile-14-xtend) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/mobilecloud-14-xtend/master/oomph.setup)   
+           * [OperaMisterWongBookmarks](https://github.com/joergreichert/OperaMisterWongBookmarks)) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/OperaMisterWongBookmarks/master/de.abg.jreichert.bookmarks.config.parent/oomph.setup))
+           * [OperationsResearch](https://github.com/joergreichert/OperationsResearch) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/OperationsResearch/master/releng/org.eclipse.xtext.example.knapsack.config.parent/oomph.setup))
+           * [XtextPlayground](https://github.com/joergreichert/XtextPlayground) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/XtextPlayground/master/TODO_Example_Xtext2/releng/org.eclipse.xtext.todo.config.parent/oomph.setup))
+           * [Permet](https://github.com/joergreichert/Permet) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/Permet/master/releng/org.eclipse.xtext.example.fowlerdsl.config.parent/oomph.setup))
+           * [Cool](https://github.com/joergreichert/Cool) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/Cool/master/oomph.setup))
            * [Spray](https://code.google.com/p/spray/) [oomph.setup](http://spray.eclipselabs.org.codespot.com/git-history/luna/devtools/org.eclipselabs.spray.releng.tools/Spray.setup)   
 	   * JRScalaPlayground (TODO)
 	   * Git Local Working Sets (TODO)
@@ -96,15 +101,16 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 	   * Cataquavice (TODO)
 	   * 3RAD (TODO)
 	 * Xtext Runtimes
-           * Xtext Runtime 2.7](http://www.eclipse.org/Xtext/) [oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/xtextRuntime273.setup)   
-           * [Xtext Runtime 2.8](http://www.eclipse.org/Xtext/) [oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/xtextRuntime280.setup)   
+           * [Xtext Runtime 2.7](http://www.eclipse.org/Xtext/) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/xtextRuntime273.setup))
+           * [Xtext Runtime 2.8](http://www.eclipse.org/Xtext/) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/xtextRuntime280.setup))
 	   * Xtext Runtime 2.8
 	 * General
-           * [Oomph Authoring](http://projects.eclipse.org/projects/tools.oomph) [oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/OomphAuthoring.setup)   
+           * [Oomph Authoring](http://projects.eclipse.org/projects/tools.oomph) ([oomph.setup](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/master/setups/OomphAuthoring.setup))
 	   * Oomph Authoring
    * Double click on "Oomph Authoring"
    * leave Stream to "master"
  * page 3
+   * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/05_Page3.JPG "Page 3: Variables")
    * Show all variables (Check)
    * Installation location rule: 
      * Select "Installed in a uniquely-named folder within the root install folder
@@ -118,8 +124,21 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
    * Workspace location: oomph_authoring
    * Oomph Authoring Target Platform: Luna
  * page 4
+   * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/06_Page4.JPG "Page 4: Confirmation")
    * Finish
- 
+ * Now the Eclipse IDE is installed
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/07_Page5.JPG "Page 5: Installation of IDE in progress")
+ * The installed Eclipse IDE is started, you can close the wizard
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/08_StartingEclipse.JPG "Starting IDE")
+ * At each start of the with Oomph installed IDE a so called setup check is performed, who executes all Oomph tasks belonging to the Eclipse IDE configuration again (e.g. to update plug-ins installed in IDE, update the target platform, import projects and so on). If it discovers that the git location is already locally available it of cause doesn't clone the repository again.
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/09_SetupCheck.JPG "Setup check")
+ * the setup tasks are executed by default in background so can already start using your IDE
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/10_ExecutingSetupTasks.JPG "Executing setup tasks as background task")
+ * but you can bring the setup task job to foreground to see what is going on
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/11_ExecutingSetupTasksEnlarged.JPG "Setup of workspace and IDE configuration in progress")
+ * Finally your IDE is completely configured
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/12_Installed.JPG "IDE completely configured")
+
 ## Example for creating a new Oomph setup
 ### Initial steps
  * use Oomph installer and choose General/Oomph Authoring at the second page to materialize product dedicated for editing setup files
@@ -224,6 +243,8 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
  * task: JRE
    * Version: JavaSE-1.8
    * Location: ${jre.location-1.8}
+    
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/15_OomphEditor.JPG "Oomph editor and outline: P2 director and preferences in editor, resolved and unresolved variables in outline view")   
  
 ### IDE features and plug-ins selection
  * selection of installable units to be installed in the IDE to provide required UI features
@@ -235,6 +256,12 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 	   * opens repository explorer, where the P2 repository is explored and all contained (in my case this process never stops)
    * task: requirement
  
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/16_OomphEditor2.JPG "Oomph editor and outline: Working sets and projects import in editor, resolved P2 dependencies in outline")
+
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/19_RepositoryExplorer.jpg "Opening repository explorer for P2 URL in simple mode showing only feature IUs")
+
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/20_RepositoryExplorerExpert.jpg "Repository explorer in expert mode showing all IUs contained in P2 update 
+
 ### IDE preferences
  * usually a good idea to copy this over from one of the existings Oomph setups, e.g. from org.eclipse.oomph/setups/interim/CodeRecommenders.setup
    and then add/adapt/delete preferences as required
@@ -244,6 +271,8 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
  * to capture preference key-value pairs you can also open Window -> Preferences, make changes to the configuration and as soon as 
    you close the preference dialog it is asked to store the changes as Preference tasks - note this works only from the current 
    Eclipse instance running to its local Oomph setup file it was once created from
+
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/21_PreferenceRecorder.JPG "Oomph preference page: Configuring preference recorder")
 
 ### Git clone
  * task: Git clone
@@ -351,6 +380,8 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
        * url="http://download.itemis.com/updates/releases/2.1.1/"
        * url="http://www.xpect-tests.org/updatesite/nightly/"
 
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/17_OomphEditor3.JPG "Oomph editor and outline: Targlets in editor and in outline view")
+
 ### Working sets
  * working sets can be set up by e.g. applying path matching patterns, so as the Git
    repository folder structure already reflects the different types of projects, it
@@ -394,6 +425,8 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
  * with task "Mylyn Builds" and connector kind "org.eclipse.mylyn.hudson"
    you can query Jenkins server status
 	 
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/18_OomphEditor4.JPG "Oomph editor and outline: Mylyn tasks and streams in editor, working sets in outline view")
+
 ### Streams
  * typically reflecting branches or tags in the GitHub repository
  * in example
@@ -463,6 +496,23 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
  * Check if the circle arrow symbol in the bottom status bar has no error marker (you can click on it to see the current setup status)
  * if dialog pops up with requesting eclipse.exe to pass firewall, confirm
  * With Help -> Perform Setup Tasks... you can manually trigger the setup tasks again
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/13_PerformSetup.JPG "Help menu: triggering Oomph setup manually")
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/14_PerformSetup_Selection.JPG "Triggering Oomph setup manually: select tasks to perform again")
+
+## Bundle Pool Analysis
+ * you can check and clean up the shared bundle pool using the bundle pool analysis wizard (you can open it either via preference page Oomph / Bundle pool or at the first page of the Oomph installer and selecting one of your bundle pool agent nodes
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/22_BundlePoolAnalysis.JPG "Oomph preference page: Bundle pool analysis in progress")
+ * You can select all artifacts that are currently not used by any of the installed IDEs
+![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/23_BundlePoolAnalysisDelete.JPG "Bundle pool analysis: select unused artifacts for deletion")
+ * these artifacts are then physically deleted, so you free some disk space (note you have to execute this step sometimes multiple times to also delete transitively dependent artifacts)
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/24_BundlePoolAnalysisDelete2.JPG "Bundle pool analysis: delete unused artifacts physically")
+
+### Profile Details
+ * in the Bundle Pool Analysis dialog you can show the details of your currently by Oomph installed IDEs (and workspaces)
+ * you can also delete profiles for that no physical installation doesn't exist anymore
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/25_ProfileDetails.JPG "Oomph profile details: definition")
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/26_ProfileDetails2.JPG "Oomph profile details: installed units")
+ * ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/27_ProfileDetails3.JPG "Oomph profile details: properties")
 
 ## Resources 
  * [Original project proposal](https://projects.eclipse.org/proposals/oomph) 
