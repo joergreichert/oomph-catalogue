@@ -365,7 +365,7 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
 	   * includeAllPlatforms: false
 	   * includeSource: false
 	   * generateVersions: true
-     * Requirements
+  * Requirements
 	   * name="org.eclipse.platform.feature.group
 	   * name="org.eclipse.jdt.feature.group"
        * name="org.eclipse.emf.sdk.feature.group"
