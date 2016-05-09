@@ -49,7 +49,7 @@
         <repository
             url="http://download.eclipse.org/technology/epp/packages/mars"/>
         <repository
-            url="http://download.eclipse.org/releases/mars/201408221000"/>
+            url="http://download.eclipse.org/releases/mars/201510021000"/>
       </setupTask>
     </version>
     <version
