@@ -12,9 +12,35 @@
     label="Oomph Authoring">
   <setupTask
       xsi:type="setup.p2:P2Task">
-    <requirement
-        name="org.eclipse.oomph.all.feature.group"/>
-    <requirement
+   <requirement
+         name="org.eclipse.oomph.gitbash.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.launches.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.manifests.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.p2.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.preferences.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.projectconfig.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.projectcopy.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.version.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.version.headless.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.ostools.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.workingsets.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.targlets.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.util.feature.group"/>
+   <requirement
+         name="org.eclipse.oomph.setup.sdk.feature.group"/>
+   <requirement
         name="org.eclipse.egit.feature.group"/>
     <requirement
         name="org.eclipse.emf.sdk.feature.group"/>
