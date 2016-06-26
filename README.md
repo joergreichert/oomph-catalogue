@@ -390,15 +390,15 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
    can be reused for the working sets
  * task: Working Sets
    * task: Working Set, name="Release Engineering"
-     * LocationPredicate: pattern=".*/releng/.*"
+     * LocationPredicate: pattern=".\*/releng/.\*"
    * task: Working Set, name="Plug-ins"
-     * LocationPredicate: pattern=".*/plugins/.*"
+     * LocationPredicate: pattern=".\*/plugins/.\*"
    * task: Working Set, name="Tests"
-     * LocationPredicate: pattern=".*/tests/.*"
+     * LocationPredicate: pattern=".\*/tests/.\*"
    * task: Working Set, name="Examples"
-     * LocationPredicate: pattern=".*/releng/.*"
+     * LocationPredicate: pattern=".\*/releng/.\*"
    * task: Working Set, name="Update Site"
-     * LocationPredicate: pattern=".*/features/.*"
+     * LocationPredicate: pattern=".\*/features/.\*"
 
 ### Mylyn
  * you can set up Mylyn task repositories and issue queries
