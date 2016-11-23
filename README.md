@@ -361,26 +361,26 @@ Custom product and project catalogue for my GitHub projects, inspired by [Alex' 
      within the Maven build
    * for the example I used the following configuration
      * Annotation, source: http:/www.eclipse.org/oomph/targlets/TargetDefinitionGenerator
-       * location: ${git.clone.rtg.location/releng/de.abg.jreichert.repositorytarget.targetplatform/de.abg.jreichert.repositorytarget.targetplatform.target}
-       * includeAllPlatforms: false
-       * includeSource: false
-       * generateVersions: true
-     * Requirements
-       * name="org.eclipse.platform.feature.group
-       * name="org.eclipse.jdt.feature.group"
-       * name="org.eclipse.emf.sdk.feature.group"
-       * name="org.eclipse.xtext.redist.feature.group, versionRange="[2.7.3,2.8.0)"
-       * name="org.eclipse.xtext.ui.feature.group", versionRange="[2.7.3,2.8.0)"
-       * name="org.eclipse.xtend.lib", versionRange="[2.7.3,2.8.0)"
-       * name="org.eclipse.xtext.xbase.lib, versionRange="[2.7.3,2.8.0)"
-     * SourceLocator: rootFolder="${git.clone.rtg.location}", locateNestedProjects="true"
-       * RepositoryList, name="Luna"
-       * url="http://download.eclipse.org/releases/luna"
-       * url="http://download.eclipse.org/eclipse/updates/4.4"
-       * url="http://download.eclipse.org/modeling/emf/emf/updates/releases/"
-       * url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"
-       * url="http://download.itemis.com/updates/releases/2.1.1/"
-       * url="http://www.xpect-tests.org/updatesite/nightly/"
+		   * location: $\{git.clone.rtg.location/releng/de.abg.jreichert.repositorytarget.targetplatform/de.abg.jreichert.repositorytarget.targetplatform.target\}
+		   * includeAllPlatforms: false
+		   * includeSource: false
+		   * generateVersions: true
+	   * Requirements
+		   * name="org.eclipse.platform.feature.group"
+		   * name="org.eclipse.jdt.feature.group"
+		   * name="org.eclipse.emf.sdk.feature.group"
+		   * name="org.eclipse.xtext.redist.feature.group, versionRange="[2.7.3,2.8.0)"
+		   * name="org.eclipse.xtext.ui.feature.group", versionRange="[2.7.3,2.8.0)"
+		   * name="org.eclipse.xtend.lib", versionRange="[2.7.3,2.8.0)"
+		   * name="org.eclipse.xtext.xbase.lib, versionRange="[2.7.3,2.8.0)"
+     * SourceLocator: rootFolder="$\{git.clone.rtg.location\}", locateNestedProjects="true"
+        * RepositoryList, name="Luna"
+        * url="http://download.eclipse.org/releases/luna"
+        * url="http://download.eclipse.org/eclipse/updates/4.4"
+        * url="http://download.eclipse.org/modeling/emf/emf/updates/releases/"
+        * url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"
+        * url="http://download.itemis.com/updates/releases/2.1.1/"
+        * url="http://www.xpect-tests.org/updatesite/nightly/"
 
 ![alt text](https://raw.githubusercontent.com/joergreichert/oomph-catalogue/wiki/screenshots/17_OomphEditor3.JPG "Oomph editor and outline: Targlets in editor and in outline view")
 
